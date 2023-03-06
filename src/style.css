@@ -60,3 +60,12 @@ li::first-letter {
 .weather-temperature .units {
   font-size: 16px;
 }
+
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
