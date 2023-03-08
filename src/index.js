@@ -23,6 +23,29 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayWeatherForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+
+  forecastHTML =
+    forecastHTML +
+    `<div class="col-2">
+                <div class="weather-forecast-day">
+                  Mon
+                  <img
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
+                    alt=""
+                    width="46px"
+                  />
+                  <span class="weather-forecast-temperature-max">18°</span>
+                  <span class="weather-forecast-temperature-min">10°</span>
+                </div>
+              </div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   celsiusTemperature = response.data.temperature.current;
 
@@ -95,3 +118,4 @@ let celsiusElement = document.querySelector("#celsius-link");
 celsiusElement.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");
+displayWeatherForecast();
